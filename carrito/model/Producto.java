@@ -33,6 +33,11 @@ public class Producto {
         return productos;
     }
 
+    @Override
+    public String toString() {
+        return getNombre() + " - $" + getPrecio() + " - " + getCantidad() + " unidades";
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -41,8 +46,11 @@ public class Producto {
         return cantidad;
     }
 
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public double getPrecio() {
         return precio;
     }
-
 }

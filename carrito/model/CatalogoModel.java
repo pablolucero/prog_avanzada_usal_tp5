@@ -1,15 +1,16 @@
 package carrito.model;
 
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
-public class CatalogoModel extends DefaultTableModel {
+public class CatalogoModel extends AbstractTableModel {
 
     private String[] encabezados = {"Producto", "Precio", "Cantidad"};
 
     private List<Producto> productosList;
 
     public CatalogoModel(Catalogo nroCatalogo) {
+
         switch (nroCatalogo) {
             case UNO:
                 productosList = Producto.getProductosCat1();
@@ -18,6 +19,16 @@ public class CatalogoModel extends DefaultTableModel {
                 productosList = Producto.getProductosCat2();
                 break;
         }
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        final Producto producto = productosList.get(rowIndex);
+        if (columnIndex == 2) {
+            producto.setCantidad(Integer.parseInt(String.valueOf(aValue)));
+        }
+
+        fireTableCellUpdated(rowIndex, columnIndex);
     }
 
     @Override
@@ -33,12 +44,15 @@ public class CatalogoModel extends DefaultTableModel {
 
     @Override
     public int getRowCount() {
-        return encabezados.length;
+        if (productosList != null)
+            return productosList.size();
+        else
+            return 0;
     }
 
     @Override
     public int getColumnCount() {
-        return productosList.size();
+        return encabezados.length;
     }
 
     @Override

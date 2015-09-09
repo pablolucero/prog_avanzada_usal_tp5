@@ -8,22 +8,17 @@ import java.awt.event.ActionListener;
 
 public class ListadoDeComprasPanel extends JPanel {
 
-
-    private JTable table;
     private ListadoComprasModel listadoComprasModel;
     private JLabel totalLabel;
 
     public ListadoDeComprasPanel() {
-        super();
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         add(new JLabel("Listado De Compras"));
 
-
         listadoComprasModel = new ListadoComprasModel();
-        table = new JTable(listadoComprasModel);
-
+        JTable table = new JTable(listadoComprasModel);
 
         add(table.getTableHeader());
         add(table);
@@ -38,8 +33,8 @@ public class ListadoDeComprasPanel extends JPanel {
 
         add(vaciarButton);
         totalLabel = new JLabel("Total: $" + listadoComprasModel.sumarTotal());
-        add(totalLabel);
 
+        add(totalLabel);
     }
 
     private void vaciarButtonPressed() {
@@ -47,7 +42,7 @@ public class ListadoDeComprasPanel extends JPanel {
         setearTotalLabelText();
     }
 
-    private void setearTotalLabelText() {
+    public void setearTotalLabelText() {
         totalLabel.setText("Total: $" + listadoComprasModel.sumarTotal());
     }
 }

@@ -1,19 +1,17 @@
 package carrito.model;
 
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
-public class ListadoComprasModel extends DefaultTableModel {
-//public class ListadoComprasModel extends AbstractTableModel {
+public class ListadoComprasModel extends AbstractTableModel {
 
     private String[] encabezados = {"Producto", "Cantidad", "Precio"};
 
-    // TODO: productosList deberia tener la mezcla de los productos seleccionados en los 2 Catalogos
     private List<Producto> productosList;
 
     public ListadoComprasModel() {
 
-        productosList = Producto.getProductosCat1();
+        productosList = Carrito.getInstance().getProductos();
     }
 
     @Override

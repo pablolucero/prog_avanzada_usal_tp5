@@ -1,16 +1,12 @@
 package carrito;
 
 import carrito.model.Catalogo;
-import carrito.model.ListadoComprasModel;
-import carrito.model.Producto;
 import carrito.view.CatalogoPanel;
 import carrito.view.ListadoDeComprasPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PortalDeCompras extends JFrame implements ActionListener {
 
@@ -18,8 +14,6 @@ public class PortalDeCompras extends JFrame implements ActionListener {
     private static String CATEGORIA1 = "Categoria I";
     private static String CATEGORIA2 = "Categoria II";
     private JPanel panelCategoria1, panelCategoria2, panelListadoDeCompras;
-    private ListadoComprasModel listadoComprasModel;
-
 
     public PortalDeCompras() {
 
@@ -31,36 +25,6 @@ public class PortalDeCompras extends JFrame implements ActionListener {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(700, 500);
         setVisible(true);
-    }
-
-//    public static Object[][] generarMultiArrayDeProductos() {
-//
-//        Object[][] data = {
-//                {"Producto A", 1, 20},
-//                {"Producto B", 2, 30.50},
-//                {"Producto C", 3, 40.90}
-//        };
-//
-//        return data;
-//    }
-//
-//    public static Producto[] generarArrayDeProductos() {
-//
-//        List<Producto> productos = new ArrayList<>();
-//        productos.add(new Producto("Producto A",1,20));
-//        productos.add(new Producto("Producto B",2,30.50));
-//        productos.add(new Producto("Producto C",3,40.90));
-//
-//        return (Producto[]) productos.toArray();
-//    }
-
-    public static List<Producto> generarListaDeProductos() {
-        List<Producto> productos = new ArrayList<>();
-        productos.add(new Producto("Producto A", 1, 20));
-        productos.add(new Producto("Producto B", 2, 30.50));
-        productos.add(new Producto("Producto C", 3, 40.90));
-
-        return productos;
     }
 
     public static void main(String[] args) {
