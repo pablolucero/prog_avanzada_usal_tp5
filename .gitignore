@@ -1,6 +1,6 @@
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
-.iml
+/prog_avanzada_usal_tp5.iml
 
 ## Directory-based project format:
 .idea/
