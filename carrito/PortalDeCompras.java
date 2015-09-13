@@ -91,7 +91,7 @@ public class PortalDeCompras extends JFrame implements ActionListener {
             repaint();
             printAll(getGraphics());
         } else if (LISTADO_DE_COMPRAS.equals(actionCommand)) {
-            setContentPane(panelListadoDeCompras);
+            setContentPane(new ListadoDeComprasPanel());
             repaint();
             printAll(getGraphics());
         }
