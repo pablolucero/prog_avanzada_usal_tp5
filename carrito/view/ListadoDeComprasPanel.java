@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 
 public class ListadoDeComprasPanel extends JPanel {
 
-    private ListadoComprasModel listadoComprasModel;
-    private JLabel totalLabel;
+    private final ListadoComprasModel listadoComprasModel;
+    private final JLabel totalLabel;
 
     public ListadoDeComprasPanel() {
 
@@ -42,7 +42,7 @@ public class ListadoDeComprasPanel extends JPanel {
         setearTotalLabelText();
     }
 
-    public void setearTotalLabelText() {
+    private void setearTotalLabelText() {
         totalLabel.setText("Total: $" + listadoComprasModel.sumarTotal());
     }
 }

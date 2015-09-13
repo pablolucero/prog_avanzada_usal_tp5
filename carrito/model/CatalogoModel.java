@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CatalogoModel extends AbstractTableModel {
 
-    private String[] encabezados = {"Producto", "Precio", "Cantidad"};
+    private final String[] encabezados = {"Producto", "Precio", "Cantidad"};
 
     private List<Producto> productosList;
 
@@ -25,7 +25,14 @@ public class CatalogoModel extends AbstractTableModel {
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         final Producto producto = productosList.get(rowIndex);
         if (columnIndex == 2) {
-            producto.setCantidad(Integer.parseInt(String.valueOf(aValue)));
+            // si me ingresan un numero menor a cero (o algo que no sea un numero) dejo la cantidad en cero
+            try {
+                final int cantidad = Integer.parseInt(String.valueOf(aValue));
+                if (cantidad > 0) producto.setCantidad(cantidad);
+            } catch (NumberFormatException e) {
+                producto.setCantidad(0);
+            }
+
         }
 
         fireTableCellUpdated(rowIndex, columnIndex);

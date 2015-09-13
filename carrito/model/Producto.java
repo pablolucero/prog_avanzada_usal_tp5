@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Producto {
 
-    private String nombre;
+    private final String nombre;
     private int cantidad;
-    private double precio;
+    private final double precio;
 
     public Producto(String nombre, int cantidad, double precio) {
         this.nombre = nombre;

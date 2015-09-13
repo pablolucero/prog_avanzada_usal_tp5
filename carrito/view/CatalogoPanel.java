@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CatalogoPanel extends JPanel {
 
-    private JTable table;
+    private final JTable table;
 
     public CatalogoPanel(Catalogo nroDeCatalogo) {
 
@@ -68,7 +68,7 @@ public class CatalogoPanel extends JPanel {
             }
         }
 
-        // TOOD: delete this. Only used for debugging
+        // TODO: delete this. Only used for debugging
         System.out.println("***************************");
         System.out.println(Carrito.getInstance().getProductos());
         System.out.println("***************************");

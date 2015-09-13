@@ -8,19 +8,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PortalDeCompras extends JFrame implements ActionListener {
+class PortalDeCompras extends JFrame implements ActionListener {
 
-    private static String LISTADO_DE_COMPRAS = "Listado de compras";
-    private static String CATEGORIA1 = "Categoria I";
-    private static String CATEGORIA2 = "Categoria II";
-    private JPanel panelCategoria1, panelCategoria2, panelListadoDeCompras;
+    private static final String LISTADO_DE_COMPRAS = "Listado de compras";
+    private static final String CATEGORIA1 = "Categoria I";
+    private static final String CATEGORIA2 = "Categoria II";
 
-    public PortalDeCompras() {
+    private PortalDeCompras() {
 
         super("Portal de compras");
 
         setMenus();
-        setPaneles();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(700, 500);
@@ -29,13 +27,6 @@ public class PortalDeCompras extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         new PortalDeCompras();
-    }
-
-    private void setPaneles() {
-        panelListadoDeCompras = new ListadoDeComprasPanel();
-
-        panelCategoria1 = new CatalogoPanel(Catalogo.UNO);
-        panelCategoria2 = new CatalogoPanel(Catalogo.DOS);
     }
 
     private void setMenus() {
@@ -83,11 +74,11 @@ public class PortalDeCompras extends JFrame implements ActionListener {
             setVisible(false); // oculto el JFrame
             dispose(); // Destruyo el objecto JFrame
         } else if (CATEGORIA1.equals(actionCommand)) {
-            setContentPane(panelCategoria1);
+            setContentPane(new CatalogoPanel(Catalogo.UNO));
             repaint();
             printAll(getGraphics());
         } else if (CATEGORIA2.equals(actionCommand)) {
-            setContentPane(panelCategoria2);
+            setContentPane(new CatalogoPanel(Catalogo.DOS));
             repaint();
             printAll(getGraphics());
         } else if (LISTADO_DE_COMPRAS.equals(actionCommand)) {

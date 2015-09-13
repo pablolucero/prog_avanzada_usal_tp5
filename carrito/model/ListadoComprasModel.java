@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ListadoComprasModel extends AbstractTableModel {
 
-    private String[] encabezados = {"Producto", "Cantidad", "Precio"};
+    private final String[] encabezados = {"Producto", "Cantidad", "Precio"};
 
-    private List<Producto> productosList;
+    private final List<Producto> productosList;
 
     public ListadoComprasModel() {
 
@@ -57,7 +57,7 @@ public class ListadoComprasModel extends AbstractTableModel {
     public double sumarTotal() {
 
         double total = 0;
-        int COLUMNA_PRECIO = 2;
+        final int COLUMNA_PRECIO = 2;
 
         for (int i = 0; i < this.getRowCount(); i++) {
             total += (double) getValueAt(i, COLUMNA_PRECIO);
@@ -66,10 +66,10 @@ public class ListadoComprasModel extends AbstractTableModel {
     }
 
     public void vaciar() {
-        final int lastRow = getRowCount() - 1;
         // check that the table is not already empty
-        if (lastRow > 0) {
-            for (int i = (lastRow); i >= 0; i--) productosList.remove(i);
+        if (getRowCount() > 0) {
+            final int lastRow = getRowCount() - 1;
+            for (int i = lastRow; i >= 0; i--) productosList.remove(i);
             fireTableRowsDeleted(0, lastRow);
         }
     }
