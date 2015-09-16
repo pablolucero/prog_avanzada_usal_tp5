@@ -1,4 +1,7 @@
-package carrito.model;
+package model;
+
+import model.Catalogo;
+import model.Producto;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;

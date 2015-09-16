@@ -1,6 +1,6 @@
-package carrito.view;
+package view;
 
-import carrito.model.ListadoComprasModel;
+import model.ListadoComprasModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

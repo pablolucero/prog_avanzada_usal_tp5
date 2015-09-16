@@ -1,4 +1,4 @@
-package carrito.model;
+package model;
 
 public enum Catalogo {
     UNO, DOS

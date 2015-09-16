@@ -1,9 +1,9 @@
-package carrito.view;
+package view;
 
-import carrito.model.Carrito;
-import carrito.model.Catalogo;
-import carrito.model.CatalogoModel;
-import carrito.model.Producto;
+import model.Carrito;
+import model.Catalogo;
+import model.CatalogoModel;
+import model.Producto;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
