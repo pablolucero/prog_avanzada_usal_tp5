@@ -31,7 +31,7 @@ public class CatalogoModel extends AbstractTableModel {
             // si me ingresan un numero menor a cero (o algo que no sea un numero) dejo la cantidad en cero
             try {
                 final int cantidad = Integer.parseInt(String.valueOf(aValue));
-                if (cantidad > 0) producto.setCantidad(cantidad);
+                if (cantidad >= 0) producto.setCantidad(cantidad);
             } catch (NumberFormatException e) {
                 producto.setCantidad(0);
             }
